@@ -13,6 +13,7 @@ export const Search: FC<SearchProps> = ({ onSearch, onAnswerUpdate, onDone }) =>
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [query, setQuery] = useState<string>("");
+  const [ad, setAd] = useState([]);
   // const [apiKey, setApiKey] = useState<string>("");
   const [showSettings, setShowSettings] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -32,6 +33,18 @@ export const Search: FC<SearchProps> = ({ onSearch, onAnswerUpdate, onDone }) =>
 
     const sources = await fetchSources();
     await handleStream(sources);
+  };
+
+  const handleClick = (option: string) => {
+    const options = [...ad];
+    const exists = options.indexOf(option);
+    if (exists > -1) {
+      options.splice(exists, 1);
+    } else {
+      options.push(option);
+    }
+    setAd(options);
+    return true;
   };
 
   const fetchSources = async () => {
@@ -171,6 +184,48 @@ export const Search: FC<SearchProps> = ({ onSearch, onAnswerUpdate, onDone }) =>
               />
             </button>
           </div>
+
+          <div className="relative w-full">
+  <h2 className="text-2xl">Choose your ad-venture</h2>
+  <div className="flex flex-wrap justify-between">
+    <div className="w-2/5 h-24 bg-blue-500 flex items-center justify-center m-2">
+      <input
+        type="checkbox"
+        className="mr-2"
+        checked={ad.includes('text') || ad.includes('all')}
+        onChange={() => handleClick('text')}
+      />
+      Generative text ad
+    </div>
+    <div className="w-2/5 h-24 bg-blue-500 flex items-center justify-center m-2">
+      <input
+        type="checkbox"
+        className="mr-2"
+        checked={ad.includes('ai') || ad.includes('all')}
+        onChange={() => handleClick('ai')}
+      />
+      AI chat ad
+    </div>
+    <div className="w-2/5 h-24 bg-blue-500 flex items-center justify-center m-2">
+      <input
+        type="checkbox"
+        className="mr-2"
+        checked={ad.includes('static') || ad.includes('all')}
+        onChange={() => handleClick('static')}
+      />
+      Static ad
+    </div>
+    <div className="w-2/5 h-24 bg-blue-500 flex items-center justify-center m-2">
+      <input
+        type="checkbox"
+        className="mr-2"
+        checked={ad.includes('all')}
+        onChange={() => handleClick('all')}
+      />
+      Show me all the ads
+    </div>
+  </div>
+</div>
 
           {/* <button
             className="flex cursor-pointer items-center space-x-2 rounded-full border border-zinc-600 px-3 py-1 text-sm text-[#D4D4D8] hover:text-white"
