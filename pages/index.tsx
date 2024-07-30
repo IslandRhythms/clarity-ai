@@ -19,7 +19,15 @@ export default function Home() {
   useEffect(() => {
     // @ts-ignore
     window.stratosSettings = {
-      publisherId: '63e57237d78d35eeaab15162',
+      publisherId: '6660be5c4e70d17b07751c91',
+      //publisherId: '63e57237d78d35eeaab15162',
+      adSlots: [
+        {
+          adUnitCode: 'clarity-demo-chat-ad',
+          adFormat: 'chat',
+          sizes: [[300, 600]],
+        }
+      ]
     };
 
     // @ts-ignore
@@ -48,7 +56,7 @@ export default function Home() {
           href="/favicon.png"
         />
       </Head>
-      <div className="h-screen overflow-auto bg-[#FBEEE7] text-[#363636]">
+      <div className="h-screen overflow-auto bg-[#f5f3ed] text-[#333]">
         {answer ? (
           <Answer
             searchQuery={searchQuery}
