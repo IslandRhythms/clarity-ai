@@ -41,7 +41,7 @@ export default function Article() {
           <p className="text-xl mt-5 opacity-90">How Faster Processing is Enabling Real-Time AI Applications</p>
         </div>
 
-        <main className="max-w-[970px] mx-auto px-5 py-10">
+        <main className="max-w-[1070px] mx-auto px-5 py-10">
           <div className="text-sm text-gray-600 mb-8 pb-5 border-b border-gray-200">
             <span>By Steven Liss</span> | 
             <span> March 15, 2024</span> | 
@@ -69,13 +69,14 @@ export default function Article() {
             <p className="text-lg text-gray-700 my-5">
               What makes these recent advances particularly significant is not just the raw processing speed, but the ability to run sophisticated neural networks on edge devices. This distributed computing approach enables applications like real-time video monitoring, automated quality control in manufacturing, and intelligent traffic management systems - all while maintaining data privacy and reducing latency.
             </p>
-            <iframe
+            <div id="demo-clarity-chat-ad-infeed"></div>
+            {/* <iframe
               srcDoc={iframeContent}
               width="970"
               height="250"
               frameBorder="0"
               scrolling="no"
-            />
+            /> */}
             <p className="text-lg text-gray-700 my-5">
               Companies at the forefront of this revolution are deploying systems that can analyze dozens of video feeds simultaneously, detecting everything from security threats to production line defects in milliseconds. This real-time processing capability, combined with the ability to understand context across multiple modalities, is opening new frontiers in automation and monitoring.
             </p>
@@ -83,12 +84,14 @@ export default function Article() {
             <div className="my-10 bg-gray-100 p-5 rounded-lg">
               <iframe
                 srcDoc={`
-                  <script async src="https://js.stratos.blue/stratos.js?publisherId=6660be5c4e70d17b07751c91"></script>
+                  <script async src="https://js.stratos.blue/stratos.js?publisherId=6723c110a57d08398172c304"></script>
                   <div id="stratos-content"></div>
                 `}
-                width="970"
-                height="250"
-                frameBorder="0"
+                width={970}
+                height={250}
+                marginWidth={0}
+                marginHeight={0}
+                frameBorder={0}
                 scrolling="no"
               />
             </div>

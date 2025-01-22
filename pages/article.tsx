@@ -499,7 +499,7 @@ export default function Article() {
           <p className="text-xl mt-5 opacity-90">Exploring the World&apos;s Most Prestigious Mountain Ultra</p>
         </div>
 
-        <main className="max-w-[970px] mx-auto px-5 py-10">
+        <main className="max-w-[1070px] mx-auto px-5 py-10">
           <div className="text-sm text-gray-600 mb-8 pb-5 border-b border-gray-200">
             <span>By Steven Liss</span> | 
             <span> November 1, 2024</span> | 
@@ -535,9 +535,11 @@ export default function Article() {
             <div className="my-10 bg-gray-100 p-5 rounded-lg">
               <iframe
                 srcDoc={iframeContent}
-                width="970"
-                height="250"
-                frameBorder="0"
+                width={970}
+                height={250}
+                frameBorder={0}
+                marginWidth={0}
+                marginHeight={0}
                 scrolling="no"
                 sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
               />
